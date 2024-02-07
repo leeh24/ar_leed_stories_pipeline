@@ -15,9 +15,10 @@ public class TemperatureController {
         this.temperatureService = temperatureService;
     }
 
-    @GetMapping("/weeklyTemperature")
-    public TemperatureDetails getTemperatureByWeek() {
-        double[] temperatureUsage = temperatureService.getTemperatureUsageByWeek();
+    @GetMapping("/dailytemperature")
+    public TemperatureDetails getDailyTemperature() {
+        double[] temperatureUsage = temperatureService.getDailyTemperature();
         return new TemperatureDetails(temperatureUsage);
     }
+
  }
