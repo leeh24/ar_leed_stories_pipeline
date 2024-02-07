@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class SolarPowerServiceImpl implements SolarPowerService {
     @Override
     public double[] getWeeklySolarUsage() {
-        double[] solarUsage = {150, 275, 320, 305, 295, 300, 170};
+        double[] solarUsage = {150.3, 275.2, 320.0, 305.7, 295.9, 300.6, 170.4};
         return solarUsage;
     }
 }
