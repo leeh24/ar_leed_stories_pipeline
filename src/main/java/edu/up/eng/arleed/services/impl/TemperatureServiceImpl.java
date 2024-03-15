@@ -1,12 +1,24 @@
 package edu.up.eng.arleed.services.impl;
 
+import edu.up.eng.arleed.dao.api.ITemperatureDAO;
+import edu.up.eng.arleed.model.FloorDetails;
 import edu.up.eng.arleed.services.api.ITemperatureService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.google.gson.JsonArray;
 
 import java.util.Calendar;
 
+
 @Service
 public class TemperatureServiceImpl implements ITemperatureService {
+    private final ITemperatureDAO temperatureDAO;
+
+    @Autowired
+    public TemperatureServiceImpl(ITemperatureDAO tempDao) {
+        this.temperatureDAO = tempDao;
+    }
+
     @Override
     public double[] getDailyTemperature(String env) {
 
@@ -33,6 +45,12 @@ public class TemperatureServiceImpl implements ITemperatureService {
 
 
         return temperature;
+    }
+
+    @Override
+    public String getFloorTemp(int floorNum) {
+
+        return temperatureDAO.getFloorTemp(floorNum);
     }
 
 }
