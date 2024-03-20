@@ -16,10 +16,10 @@ public class WaterController {
     }
 
 
-    @GetMapping("/weeklywaterusage")
+    @GetMapping("/SpaceTemp-Q1-2024")
     public WaterDetails getWaterUsageByWeek() {
-        double[] waterUsage = waterUsageService.getWaterUsageByWeek();
-        return new WaterDetails(waterUsage);
+        double[] spaceTemp = waterUsageService.getWaterUsageByWeek();
+        return new WaterDetails(spaceTemp);
     }
 
 
